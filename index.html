@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vanilla & Co. — Artisan Dog Shampoo</title>
+  <title>Vanilla & Co. — Skincare for dogs. For every season.</title>
 
   <!-- Google Fonts: Cormorant Garamond (serif) + Jost (sans-serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,17 +21,19 @@
     }
 
     :root {
-      --ivory:      #FAF6EF;
-      --offwhite:   #F5F0E8;
-      --beige:      #EDE5D8;
-      --beige-dark: #DDD3C1;
-      --espresso:   #2C1F14;
+      --ivory:        #FAF6EF;
+      --offwhite:     #F5F0E8;
+      --beige:        #EDE5D8;
+      --beige-dark:   #DDD3C1;
+      --espresso:     #2C1F14;
       --espresso-mid: #4A3728;
-      --warm-mid:   #7A6152;
-      --serif:      'Cormorant Garamond', Georgia, serif;
-      --sans:       'Jost', system-ui, sans-serif;
-      --transition: 0.35s ease;
-      --radius:     4px;
+      --warm-mid:     #7A6152;
+      --gold:         #C9A96E;
+      --gold-light:   rgba(201, 169, 110, 0.18);
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --sans:         'Jost', system-ui, sans-serif;
+      --transition:   0.35s ease;
+      --radius:       4px;
     }
 
     html {
@@ -82,9 +84,6 @@
     /* =========================================================
        TYPOGRAPHY HELPERS
     ========================================================= */
-    .serif  { font-family: var(--serif); }
-    .sans   { font-family: var(--sans); }
-
     h1, h2, h3 {
       font-family: var(--serif);
       font-weight: 400;
@@ -122,7 +121,6 @@
       transition: border-color var(--transition), background-color var(--transition);
     }
 
-    /* Slight border appears once page is scrolled */
     .nav.scrolled {
       border-bottom-color: var(--beige);
       background-color: rgba(250, 246, 239, 0.97);
@@ -167,10 +165,9 @@
 
     .nav__links a {
       font-family: var(--sans);
-      font-size: 0.8rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-size: 0.82rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
       color: var(--espresso-mid);
       text-decoration: none;
       position: relative;
@@ -185,7 +182,7 @@
       left: 0;
       width: 0;
       height: 1px;
-      background: var(--espresso);
+      background: var(--gold);
       transition: width var(--transition);
     }
 
@@ -226,16 +223,16 @@
       overflow: hidden;
     }
 
-    /* Subtle radial glow behind bottle */
+    /* Warm radial glow */
     .hero::before {
       content: '';
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 640px;
-      height: 640px;
-      background: radial-gradient(ellipse at center, rgba(220, 200, 170, 0.28) 0%, transparent 70%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(ellipse at center, rgba(201, 169, 110, 0.1) 0%, transparent 68%);
       pointer-events: none;
     }
 
@@ -245,8 +242,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2rem;
-      max-width: 760px;
+      gap: 1.8rem;
+      max-width: 780px;
     }
 
     .hero__logo-stamp {
@@ -254,23 +251,22 @@
       height: 110px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
     .hero__eyebrow {
       font-family: var(--sans);
       font-size: 0.72rem;
       font-weight: 400;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--warm-mid);
+      letter-spacing: 0.2em;
+      color: var(--gold);
     }
 
     .hero__headline {
-      font-size: clamp(3rem, 8vw, 5.8rem);
+      font-size: clamp(2.8rem, 7.5vw, 5.6rem);
       font-weight: 300;
       color: var(--espresso);
-      line-height: 1.05;
+      line-height: 1.08;
     }
 
     .hero__headline em {
@@ -278,21 +274,21 @@
       font-weight: 300;
     }
 
-    .hero__tagline {
+    .hero__subhead {
       font-family: var(--sans);
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 300;
-      letter-spacing: 0.08em;
+      line-height: 1.75;
       color: var(--espresso-mid);
-      max-width: 400px;
+      max-width: 520px;
     }
 
     /* CSS-crafted pump bottle */
     .bottle {
       position: relative;
       width: 140px;
-      margin: 1.5rem auto;
-      filter: drop-shadow(0 12px 40px rgba(44, 31, 20, 0.12));
+      margin: 0.5rem auto;
+      filter: drop-shadow(0 12px 40px rgba(44, 31, 20, 0.1));
     }
 
     .bottle__pump-head {
@@ -333,7 +329,6 @@
       overflow: hidden;
     }
 
-    /* Glass highlight streak */
     .bottle__body::before {
       content: '';
       position: absolute;
@@ -345,7 +340,6 @@
       border-radius: 10px;
     }
 
-    /* Label area */
     .bottle__label {
       position: absolute;
       bottom: 30px;
@@ -356,16 +350,15 @@
       border-radius: 6px;
       padding: 10px 8px;
       text-align: center;
-      border: 0.5px solid rgba(180,165,148,0.4);
+      border: 0.5px solid rgba(201,169,110,0.35);
     }
 
-    /* Paw print on label */
     .bottle__paw {
       font-size: 0.9rem;
       line-height: 1;
       margin-bottom: 4px;
-      color: var(--espresso-mid);
-      opacity: 0.55;
+      color: var(--gold);
+      opacity: 0.7;
     }
 
     .bottle__label-brand {
@@ -373,7 +366,6 @@
       font-size: 0.55rem;
       font-weight: 500;
       letter-spacing: 0.14em;
-      text-transform: uppercase;
       color: var(--espresso);
       display: block;
       line-height: 1.3;
@@ -384,7 +376,7 @@
       font-size: 0.42rem;
       font-weight: 400;
       letter-spacing: 0.1em;
-      color: var(--warm-mid);
+      color: var(--gold);
       display: block;
       margin-top: 2px;
     }
@@ -397,33 +389,24 @@
       margin: 0 auto;
     }
 
-    /* Volume badge beneath bottle */
-    .hero__volume {
-      font-family: var(--sans);
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      color: var(--warm-mid);
-      text-transform: uppercase;
-    }
-
-    /* Ghost / outline CTA button */
+    /* Ghost CTA button — gold accent on hover */
     .btn-ghost {
       display: inline-block;
       font-family: var(--sans);
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 400;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+      letter-spacing: 0.16em;
       color: var(--espresso);
       text-decoration: none;
       border: 1px solid var(--espresso);
-      padding: 14px 36px;
+      padding: 14px 38px;
       border-radius: var(--radius);
-      transition: background-color var(--transition), color var(--transition);
+      transition: background-color var(--transition), color var(--transition), border-color var(--transition);
     }
 
     .btn-ghost:hover {
       background-color: var(--espresso);
+      border-color: var(--espresso);
       color: var(--ivory);
     }
 
@@ -437,15 +420,14 @@
       flex-direction: column;
       align-items: center;
       gap: 6px;
-      opacity: 0.45;
+      opacity: 0.4;
       animation: bounce 2.4s ease-in-out infinite;
     }
 
     .hero__scroll-hint span {
       font-family: var(--sans);
       font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+      letter-spacing: 0.18em;
       color: var(--espresso);
     }
 
@@ -488,21 +470,19 @@
     }
 
     .benefit-item__icon {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       line-height: 1;
     }
 
     .benefit-item__label {
       font-family: var(--sans);
-      font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      font-size: 0.73rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
       color: var(--espresso-mid);
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
-    /* Separator lines between items */
     .benefit-separator {
       width: 1px;
       height: 40px;
@@ -527,9 +507,8 @@
       font-family: var(--sans);
       font-size: 0.7rem;
       font-weight: 400;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--warm-mid);
+      letter-spacing: 0.2em;
+      color: var(--gold);
       display: block;
       margin-bottom: 1rem;
     }
@@ -573,7 +552,7 @@
       font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.14em;
-      color: var(--beige-dark);
+      color: var(--gold);
       margin-bottom: 0.9rem;
     }
 
@@ -624,11 +603,8 @@
       margin-bottom: 1.2rem;
     }
 
-    .story__text p:last-of-type {
-      margin-bottom: 0;
-    }
+    .story__text p:last-of-type { margin-bottom: 0; }
 
-    /* Dog name highlights */
     .story__text strong {
       font-family: var(--serif);
       font-weight: 500;
@@ -636,7 +612,6 @@
       color: var(--espresso);
     }
 
-    /* Visual accent block beside the text */
     .story__visual {
       display: flex;
       align-items: center;
@@ -664,8 +639,6 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 0;
-      max-width: 1040px;
-      margin: 0 auto;
     }
 
     .process-step {
@@ -675,27 +648,27 @@
       transition: background-color var(--transition);
     }
 
-    .process-step:hover {
-      background-color: var(--offwhite);
-    }
+    .process-step:hover { background-color: var(--offwhite); }
 
-    /* Remove right border on every 4th item */
-    .process-step:nth-child(4n) {
-      border-right: none;
-    }
-
-    /* Remove bottom border on last row (items 5-8) */
-    .process-step:nth-child(n+5) {
-      border-bottom: none;
-    }
+    .process-step:nth-child(4n)  { border-right: none; }
+    .process-step:nth-child(n+5) { border-bottom: none; }
 
     .process-step__num {
       font-family: var(--serif);
       font-size: 3rem;
       font-weight: 300;
-      color: var(--beige-dark);
+      color: var(--gold-light);
       line-height: 1;
       margin-bottom: 1rem;
+      /* Render the gold tint visibly by switching to actual gold at low opacity */
+      color: var(--gold);
+      opacity: 0.35;
+    }
+
+    /* Override: readable gold number */
+    .process-step__num {
+      color: var(--gold);
+      opacity: 0.5;
     }
 
     .process-step__title {
@@ -706,7 +679,6 @@
       line-height: 1.3;
     }
 
-    /* Wrap the steps in a border box */
     .process__box {
       border: 1px solid var(--beige);
       border-radius: 8px;
@@ -735,24 +707,25 @@
 
     .footer__tagline {
       font-family: var(--sans);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 300;
-      letter-spacing: 0.12em;
-      color: rgba(250, 246, 239, 0.55);
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      opacity: 0.75;
     }
 
     .footer__divider {
       width: 40px;
       height: 1px;
-      background: rgba(250, 246, 239, 0.2);
+      background: rgba(250, 246, 239, 0.15);
       margin: 1.5rem auto;
     }
 
     .footer__copy {
       font-family: var(--sans);
       font-size: 0.72rem;
-      color: rgba(250, 246, 239, 0.3);
-      letter-spacing: 0.08em;
+      color: rgba(250, 246, 239, 0.28);
+      letter-spacing: 0.06em;
     }
 
     /* =========================================================
@@ -764,31 +737,15 @@
         gap: 3rem;
       }
 
-      .story__visual {
-        order: -1;
-      }
+      .story__visual { order: -1; }
 
-      .process-step:nth-child(4n) {
-        border-right: 1px solid var(--beige);
-      }
+      .process-step:nth-child(4n)  { border-right: 1px solid var(--beige); }
+      .process-step:nth-child(n+5) { border-bottom: 1px solid var(--beige); }
 
-      .process-step:nth-child(n+5) {
-        border-bottom: 1px solid var(--beige);
-      }
+      .process__steps { grid-template-columns: repeat(2, 1fr); }
 
-      .process__steps {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      /* Remove right border on every 2nd item in 2-col layout */
-      .process-step:nth-child(2n) {
-        border-right: none;
-      }
-
-      /* Remove bottom border on last two items */
-      .process-step:nth-last-child(-n+2) {
-        border-bottom: none;
-      }
+      .process-step:nth-child(2n)      { border-right: none; }
+      .process-step:nth-last-child(-n+2) { border-bottom: none; }
     }
 
     /* =========================================================
@@ -807,9 +764,7 @@
         border-bottom: 1px solid var(--beige);
       }
 
-      .nav__links.open {
-        display: flex;
-      }
+      .nav__links.open { display: flex; }
 
       .nav__links li a {
         display: block;
@@ -817,57 +772,33 @@
         border-top: 1px solid var(--beige);
       }
 
-      .nav__hamburger {
-        display: flex;
-      }
+      .nav__hamburger { display: flex; }
 
       .benefits__grid {
         flex-direction: column;
         gap: 1.8rem;
       }
 
-      .benefit-separator {
-        display: none;
-      }
+      .benefit-separator { display: none; }
 
-      .formula {
-        padding: 80px 1.5rem;
-      }
+      .formula { padding: 80px 1.5rem; }
+      .formula__grid { grid-template-columns: 1fr; }
 
-      .formula__grid {
-        grid-template-columns: 1fr;
-      }
+      .story { padding: 80px 1.5rem; }
+      .story__logo-img { width: 220px; height: 220px; }
 
-      .story {
-        padding: 80px 1.5rem;
-      }
+      .process { padding: 80px 1.5rem; }
+      .process__steps { grid-template-columns: 1fr; }
 
-      .story__emblem {
-        width: 200px;
-        height: 200px;
-      }
-
-      .process {
-        padding: 80px 1.5rem;
-      }
-
-      .process__steps {
-        grid-template-columns: 1fr;
-      }
-
-      /* Reset all borders for single-column */
       .process-step {
         border-right: none !important;
         border-bottom: 1px solid var(--beige) !important;
       }
 
-      .process-step:last-child {
-        border-bottom: none !important;
-      }
+      .process-step:last-child { border-bottom: none !important; }
 
-      .hero__headline {
-        font-size: 3rem;
-      }
+      .hero__headline { font-size: 2.8rem; }
+      .hero__subhead { font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -901,17 +832,22 @@
   ===================================================== -->
   <section class="hero" id="home" aria-label="Hero">
     <div class="hero__content reveal">
-      <img src="logo.png" alt="Vanilla & Co. logo" class="hero__logo-stamp" />
-      <span class="hero__eyebrow">Small-batch &nbsp;·&nbsp; Handcrafted &nbsp;·&nbsp; Artisan</span>
+
+      <img src="logo.png" alt="Vanilla & Co." class="hero__logo-stamp" />
+
+      <span class="hero__eyebrow">Seasonal dog skincare &nbsp;·&nbsp; Science-backed &nbsp;·&nbsp; Small-batch</span>
 
       <h1 class="hero__headline">
-        <em>Vanilla</em> Glow<br/>Shampoo
+        Your dog deserves<br/><em>a routine.</em>
       </h1>
 
-      <p class="hero__tagline">Hydrating &amp; Brightening — 12 fl. oz / 355 ml</p>
+      <p class="hero__subhead">
+        Seasonal skincare formulated for the way dogs actually live —
+        beaches, snow walks, muddy parks, and everything in between.
+      </p>
 
       <!-- CSS-crafted pump bottle -->
-      <div class="bottle" aria-label="Vanilla Glow Shampoo bottle illustration" role="img">
+      <div class="bottle" aria-label="Vanilla Glow product bottle illustration" role="img">
         <div class="bottle__pump-head"></div>
         <div class="bottle__pump-neck"></div>
         <div class="bottle__collar"></div>
@@ -925,12 +861,9 @@
         <div class="bottle__bottom"></div>
       </div>
 
-      <p class="hero__volume">12 fl. oz &nbsp;/&nbsp; 355 ml</p>
-
-      <a href="#formula" class="btn-ghost">Discover the Formula</a>
+      <a href="#formula" class="btn-ghost">Discover the formula</a>
     </div>
 
-    <!-- Subtle scroll-down hint -->
     <div class="hero__scroll-hint" aria-hidden="true">
       <span>Scroll</span>
       <svg viewBox="0 0 14 14" fill="none" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
@@ -942,32 +875,32 @@
   <!-- =====================================================
        3. BENEFITS STRIP
   ===================================================== -->
-  <section class="benefits" aria-label="Product benefits">
+  <section class="benefits" aria-label="System benefits">
     <div class="container">
       <div class="benefits__grid reveal-stagger">
         <div class="benefit-item">
-          <div class="benefit-item__icon" aria-hidden="true">🐶</div>
-          <div class="benefit-item__label">Odor-Neutralizing<br/>Technology</div>
+          <div class="benefit-item__icon" aria-hidden="true">🌿</div>
+          <div class="benefit-item__label">Plant-derived<br/>cleansers</div>
         </div>
         <div class="benefit-separator" aria-hidden="true"></div>
         <div class="benefit-item">
-          <div class="benefit-item__icon" aria-hidden="true">🌿</div>
-          <div class="benefit-item__label">Plant-Derived<br/>Cleansers</div>
+          <div class="benefit-item__icon" aria-hidden="true">🧴</div>
+          <div class="benefit-item__label">Seasonal skin<br/>support</div>
         </div>
         <div class="benefit-separator" aria-hidden="true"></div>
         <div class="benefit-item">
           <div class="benefit-item__icon" aria-hidden="true">🫧</div>
-          <div class="benefit-item__label">Creamy Sulfate-Free<br/>Lather</div>
+          <div class="benefit-item__label">Sulfate-free<br/>formula</div>
         </div>
         <div class="benefit-separator" aria-hidden="true"></div>
         <div class="benefit-item">
           <div class="benefit-item__icon" aria-hidden="true">🌾</div>
-          <div class="benefit-item__label">Oatmeal Soothing<br/>Formula</div>
+          <div class="benefit-item__label">Oatmeal barrier<br/>repair</div>
         </div>
         <div class="benefit-separator" aria-hidden="true"></div>
         <div class="benefit-item">
-          <div class="benefit-item__icon" aria-hidden="true">✨</div>
-          <div class="benefit-item__label">Silky, Shiny<br/>Coat Feel</div>
+          <div class="benefit-item__icon" aria-hidden="true">🐶</div>
+          <div class="benefit-item__label">Odor-neutralizing<br/>technology</div>
         </div>
       </div>
     </div>
@@ -979,47 +912,47 @@
   <section class="formula" id="formula" aria-labelledby="formula-heading">
     <div class="container">
       <header class="section-header reveal">
-        <span class="section-eyebrow">Key Ingredients</span>
-        <h2 id="formula-heading">The Formula</h2>
-        <p>Every ingredient is chosen with intention. Nothing diluted, nothing unnecessary.</p>
+        <span class="section-eyebrow">Active ingredients</span>
+        <h2 id="formula-heading">The formula</h2>
+        <p>Every ingredient chosen for what dog skin actually needs, season after season. Nothing diluted, nothing unnecessary.</p>
       </header>
 
       <div class="formula__grid reveal-stagger">
 
         <article class="ingredient-card">
           <div class="ingredient-card__number">01</div>
-          <h3 class="ingredient-card__name">Colloidal Oatmeal</h3>
-          <p class="ingredient-card__desc">A time-honored skin soother. Fine oat particles form a protective barrier that calms irritation, reduces redness, and relieves sensitive skin.</p>
+          <h3 class="ingredient-card__name">Colloidal oatmeal</h3>
+          <p class="ingredient-card__desc">A time-honored skin soother. Fine oat particles form a protective barrier that calms irritation, repairs the skin's natural defenses, and relieves sensitivity year-round.</p>
         </article>
 
         <article class="ingredient-card">
           <div class="ingredient-card__number">02</div>
-          <h3 class="ingredient-card__name">Cocamidopropyl<br/>Betaine</h3>
-          <p class="ingredient-card__desc">A gentle, coconut-derived surfactant that cleanses without stripping. Acts as a foam stabilizer for that rich, creamy lather — sulfate-free.</p>
+          <h3 class="ingredient-card__name">Cocamidopropyl betaine</h3>
+          <p class="ingredient-card__desc">A gentle, coconut-derived surfactant that cleanses without stripping. Acts as a foam stabilizer for that rich, creamy lather — sulfate-free, skin-kind.</p>
         </article>
 
         <article class="ingredient-card">
           <div class="ingredient-card__number">03</div>
-          <h3 class="ingredient-card__name">Panthenol<br/>(Pro-Vitamin B5)</h3>
-          <p class="ingredient-card__desc">Penetrates the hair shaft to add lasting softness and shine. Humectant properties help maintain coat moisture and improve manageability.</p>
+          <h3 class="ingredient-card__name">Panthenol (pro-vitamin B5)</h3>
+          <p class="ingredient-card__desc">Penetrates the hair shaft to add lasting softness and shine. Humectant properties help maintain coat moisture and improve manageability through every season.</p>
         </article>
 
         <article class="ingredient-card">
           <div class="ingredient-card__number">04</div>
-          <h3 class="ingredient-card__name">Aloe Vera Extract</h3>
-          <p class="ingredient-card__desc">Nature's most versatile calming agent. Rich in polysaccharides, aloe hydrates deeply while soothing dry, itchy, or reactive skin.</p>
+          <h3 class="ingredient-card__name">Aloe vera extract</h3>
+          <p class="ingredient-card__desc">Nature's most versatile calming agent. Rich in polysaccharides, aloe hydrates deeply while soothing dry, itchy, or reactive skin — especially after sun and salt exposure.</p>
         </article>
 
         <article class="ingredient-card">
           <div class="ingredient-card__number">05</div>
           <h3 class="ingredient-card__name">ONZ-400</h3>
-          <p class="ingredient-card__desc">A professional-grade odor-neutralizing technology that eliminates rather than masks pet odor at the molecular level — for a lasting fresh finish.</p>
+          <p class="ingredient-card__desc">A professional-grade odor-neutralizing technology that eliminates rather than masks pet odor at the molecular level — for a genuinely fresh finish that lasts.</p>
         </article>
 
         <article class="ingredient-card">
           <div class="ingredient-card__number">06</div>
           <h3 class="ingredient-card__name">Glycerin</h3>
-          <p class="ingredient-card__desc">A deeply effective humectant that draws moisture from the air into the skin. Leaves coat feeling supple, smooth, and conditioned after every wash.</p>
+          <p class="ingredient-card__desc">A deeply effective humectant that draws moisture from the air into the skin. Leaves the coat feeling supple, smooth, and deeply conditioned after every wash.</p>
         </article>
 
       </div>
@@ -1033,33 +966,33 @@
     <div class="story__inner">
 
       <div class="story__visual reveal">
-        <img src="logo.png" alt="Vanilla & Co. — Pet Care, Made Gentle" class="story__logo-img" />
+        <img src="logo.png" alt="Vanilla & Co. — Pet care, made gentle" class="story__logo-img" />
       </div>
 
       <div class="story__text reveal">
-        <span class="section-eyebrow">Our Story</span>
+        <span class="section-eyebrow">Our story</span>
         <h2 id="story-heading">Made for Vanilla.<br/>Perfected for every dog.</h2>
 
         <p>
-          This shampoo started with two dogs and one frustrated bath-time routine.
+          This started with two dogs and one frustrated bath-time routine.
           <strong>Apple</strong> — a spirited golden with sensitive, dry skin — and
           <strong>Vanilla</strong> — a fluffy cloud of a dog with a coat that somehow
           attracted every particle of mud, dust, and general outdoor chaos.
         </p>
 
         <p>
-          Every shampoo we tried either dried out Apple's skin or left Vanilla's coat
+          Every product we tried either dried out Apple's skin or left Vanilla's coat
           dull and smelling faintly of artificial lavender. We wanted something that
-          actually <em>worked</em> — something formulated with care, without compromise,
+          actually <em>worked</em> — formulated with care, without compromise,
           and without the industrial chemical smell of most pet products.
         </p>
 
         <p>
-          So we went into the lab. Batch after small batch, we refined the formula
-          until it was exactly right: rich, calming, genuinely cleansing, and warm.
-          The kind of shampoo you'd almost want to use yourself. Vanilla & Co. was
-          born from that pursuit — and every bottle is still made with those two dogs
-          in mind.
+          Then we realized the problem wasn't just the formula. It was the approach.
+          Dogs aren't bathed once and forgotten. Their skin and coat change with the
+          seasons — dry winters, salty summers, muddy springs. So we built a skincare
+          system around that reality. Vanilla &amp; Co. is the first dog brand that
+          thinks the way a skincare brand thinks: routines, not one-offs.
         </p>
       </div>
 
@@ -1072,8 +1005,8 @@
   <section class="process" id="process" aria-labelledby="process-heading">
     <div class="container">
       <header class="section-header reveal">
-        <span class="section-eyebrow">How It's Made</span>
-        <h2 id="process-heading">The Process</h2>
+        <span class="section-eyebrow">How it's made</span>
+        <h2 id="process-heading">The process</h2>
         <p>Eight deliberate steps. Nothing rushed, nothing skipped.</p>
       </header>
 
@@ -1082,42 +1015,42 @@
 
           <div class="process-step">
             <div class="process-step__num">01</div>
-            <h3 class="process-step__title">Hydrate the<br/>Thickener</h3>
+            <h3 class="process-step__title">Hydrate the thickener</h3>
           </div>
 
           <div class="process-step">
             <div class="process-step__num">02</div>
-            <h3 class="process-step__title">Add Soothing<br/>Ingredients</h3>
+            <h3 class="process-step__title">Add soothing ingredients</h3>
           </div>
 
           <div class="process-step">
             <div class="process-step__num">03</div>
-            <h3 class="process-step__title">Add Odor<br/>Neutralizer</h3>
+            <h3 class="process-step__title">Add odor neutralizer</h3>
           </div>
 
           <div class="process-step">
             <div class="process-step__num">04</div>
-            <h3 class="process-step__title">Add<br/>Surfactants</h3>
+            <h3 class="process-step__title">Add surfactants</h3>
           </div>
 
           <div class="process-step">
             <div class="process-step__num">05</div>
-            <h3 class="process-step__title">Add Conditioning<br/>Ingredients</h3>
+            <h3 class="process-step__title">Add conditioning ingredients</h3>
           </div>
 
           <div class="process-step">
             <div class="process-step__num">06</div>
-            <h3 class="process-step__title">Add Preservation<br/>and Scent</h3>
+            <h3 class="process-step__title">Add preservation and scent</h3>
           </div>
 
           <div class="process-step">
             <div class="process-step__num">07</div>
-            <h3 class="process-step__title">Adjust<br/>Viscosity</h3>
+            <h3 class="process-step__title">Adjust viscosity</h3>
           </div>
 
           <div class="process-step">
             <div class="process-step__num">08</div>
-            <h3 class="process-step__title">Adjust<br/>pH</h3>
+            <h3 class="process-step__title">Adjust pH</h3>
           </div>
 
         </div>
@@ -1130,42 +1063,33 @@
   ===================================================== -->
   <footer class="footer" role="contentinfo">
     <div class="footer__logo">Vanilla &amp; Co.</div>
-    <p class="footer__tagline">Handcrafted with love.</p>
+    <p class="footer__tagline">Skincare for dogs. For every season.</p>
     <div class="footer__divider" aria-hidden="true"></div>
-    <p class="footer__copy">&copy; 2024 Vanilla &amp; Co. All rights reserved.</p>
+    <p class="footer__copy">&copy; 2026 Vanilla &amp; Co. All rights reserved.</p>
   </footer>
 
   <!-- =====================================================
        JAVASCRIPT
   ===================================================== -->
   <script>
-    // -------------------------------------------------------
-    // Sticky nav — adds .scrolled class after first scroll
-    // -------------------------------------------------------
+    // Sticky nav border on scroll
     const nav = document.getElementById('nav');
 
     function onScroll() {
-      if (window.scrollY > 20) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
+      nav.classList.toggle('scrolled', window.scrollY > 20);
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // -------------------------------------------------------
     // Mobile nav toggle
-    // -------------------------------------------------------
-    const hamburger  = document.getElementById('hamburger');
-    const navLinks   = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
 
     hamburger.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('open');
       hamburger.setAttribute('aria-expanded', isOpen);
     });
 
-    // Close mobile nav when a link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
@@ -1173,38 +1097,28 @@
       });
     });
 
-    // -------------------------------------------------------
     // Scroll-reveal with IntersectionObserver
-    // Targets both .reveal and .reveal-stagger elements
-    // -------------------------------------------------------
     const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          // Unobserve after reveal so it doesn't toggle back
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
-    });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     revealEls.forEach(el => observer.observe(el));
 
-    // -------------------------------------------------------
-    // Smooth active link highlighting based on scroll position
-    // -------------------------------------------------------
+    // Active nav link highlighting
     const sections   = document.querySelectorAll('section[id]');
     const navAnchors = document.querySelectorAll('.nav__links a');
 
     function updateActiveLink() {
       let current = '';
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.scrollY >= sectionTop) {
+        if (window.scrollY >= section.offsetTop - 100) {
           current = section.getAttribute('id');
         }
       });
